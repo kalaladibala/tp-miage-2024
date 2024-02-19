@@ -1,5 +1,5 @@
 
-package com.acme.todolist.configuration;
+package com.acme.todolist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,10 +21,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = "com.acme.todolist")
 @EnableJpaRepositories(basePackages = "com.acme.todolist.adapters.persistence")
 @EntityScan(basePackages = "com.acme.todolist.adapters.persistence")
-public class TodolistApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TodolistApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

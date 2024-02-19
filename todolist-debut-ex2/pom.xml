@@ -16,7 +16,7 @@
 	<description>TP1 miage, début ex. 2</description>
 
 	<properties>
-		<start-class>com.acme.todolist.TodolistApplication</start-class>
+		<start-class>com.acme.todolist.Application</start-class>
          	
 	</properties>
 
