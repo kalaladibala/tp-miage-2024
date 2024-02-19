@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenSettings">
+    <option name="linkedExternalProjectsSettings">
+      <MavenProjectSettings>
+        <option name="distributionSettings">
+          <DistributionSettings>
+            <option name="type" value="BUNDLED" />
+            <option name="url" value="https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.4/apache-maven-3.9.4-bin.zip" />
+            <path value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.9.4-bin/2vqnav6ufo1qvo5j2um40861m/apache-maven-3.9.4" />
+          </DistributionSettings>
+        </option>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/todolist-debut-ex1" />
+        <option name="localRepositoryPath" value="$MAVEN_REPOSITORY$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/todolist-debut-ex1" />
+          </set>
+        </option>
+      </MavenProjectSettings>
+      <MavenProjectSettings>
+        <option name="distributionSettings">
+          <DistributionSettings>
+            <option name="type" value="BUNDLED" />
+            <option name="url" value="https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.4/apache-maven-3.9.4-bin.zip" />
+            <path value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.9.4-bin/2vqnav6ufo1qvo5j2um40861m/apache-maven-3.9.4" />
+          </DistributionSettings>
+        </option>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/todolist-debut-ex2" />
+        <option name="localRepositoryPath" value="$MAVEN_REPOSITORY$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/todolist-debut-ex2" />
+          </set>
+        </option>
+      </MavenProjectSettings>
+    </option>
+  </component>
+</project>
