@@ -141,7 +141,9 @@ Vagrant.configure("2") do |config|
   # Outils de dev
   config.vm.provision "shell", inline: <<-SHELL
 
-    echo -e "\n#Scripts custom\n.bash_perso" >> /home/vagrant/.bashrc
+    if ! grep -q  "bash_perso" /home/vagrant/.bashrc; then
+      echo -e "\n# Scripts custom\n~/.bash_perso" >> /home/vagrant/.bashrc
+    fi
 
     # Set DEBIAN_FRONTEND to noninteractive
     export DEBIAN_FRONTEND=noninteractive
