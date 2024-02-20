@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Applications par defaut
+dconf write /org/gnome/shell/favorite-apps "['dbeaver-ce_dbeaver-ce.desktop', 'org.gnome.Terminal.desktop', 'intellij-idea-community_intellij-idea-community.desktop', 'insomnia_insomnia.desktop', 'firefox-esr.desktop']"
