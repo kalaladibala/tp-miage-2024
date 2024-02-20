@@ -9,36 +9,47 @@ Commentaires éventuels des étudiants : #XXXXXX#
 
 ## Pré-requis 
 
-* Disposer d'un PC d'au moins 8 Gio de RAM avec 20 Gio de disque disponible ;
+* Disposer d'un PC d'au moins 8 Gio de RAM avec 20 Gio de disque disponible ; Un PC par binôme suffit, choisir le plus puissant (avec le plus de RAM).
 * Disposer d'une connexion internet hors université pendant le TP (le réseau de l'université semble bloquer un certain nombre de choses). En cas d'urgence, je peux fournir de la data.
 * Disposer d'un compte Github par personne (ou un pour deux personnes si vous êtes en binôme) et avoir https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token[créé un access token] avec le droit `repo`;
-* Disposer d'un IDE (de préférence https://www.jetbrains.com/idea/download[Intellij IDEA CE], Eclipse ou VSCode) supportant le Java et Maven.
-* Disposer d'une installation de https://www.docker.com/products/docker-desktop/[Docker].
-* Disposer d'un client de test REST (https://insomnia.rest/[Insomnia] ou https://www.postman.com/product/rest-client/[Postman] conseillés).
-* Disposer d'un explorer de  base de donnée (https://dbeaver.io/[DBeaver] conseillé).
-   
-NOTE: Si vous désirez éviter d'installer ces outils, vous pouvez également télécharger, décompresser et *tester* cette https://public.florat.net/cours_miage/vm-tp-miage.zip[image VirtualBox] *avant le TP*. Le login/mot de passe est : `tp`/`tp`. Si pas déjà fait, activer les fonctions de virtualisation CPU dans votre BIOS/UEFI (option `AMD-V` ou `Intel VT` en général) sinon votre VM sera extrêmement lente et inutilisable. Une version récente de VirtualBox est également nécessaire.
+
+## Environnement de développement
+
+Deux options sont possibles :
+
+### Option 1 [préférée] - Utiliser la VM fournie
+
+Télécharger, décompresser et *tester* cette https://public.florat.net/cours_miage/vm-tp-miage.zip[image VirtualBox] *avant le TP*. Elle contient tous les outils nécessaires (Intellij IDEA, DBeaver, client REST Insomnia, Firefox...).
+
+Le login/mot de passe est : `vagrant`/`vagrant`.
+
+IMPORTANT: Si pas déjà fait, activer les fonctions de virtualisation CPU dans votre BIOS/UEFI (option `AMD-V` ou `Intel VT` en général) sinon votre VM sera extrêmement lente et inutilisable. Une version récente de VirtualBox est également nécessaire.
+
+### Option 2 - Installer les outils soit même sur votre machine
+
+* Disposer d’un IDE (de préférence Intellij IDEA CE, Eclipse ou VSCode) supportant le Java et Maven.
+* Disposer d’une installation de Docker.
+* Disposer d’un client de test REST (Insomnia ou Postman conseillés).
+* Disposer d’un explorer de base de donnée (DBeaver conseillé).
 
 ## Déroulement du TP
 
-* Répondre aux questions de la feuille de TP juste sous la question* (en modifiant, commitant puis poussant le fichier `README.adoc`).
+* Répondre aux questions de la feuille de TP juste sous la question (en modifiant, commitant puis poussant le fichier `README.adoc`).
 
-Nous fournissons différents projets Eclipse servant de base de travail aux exercices suivant. Cela permet un point de synchronisation de tous les étudiants à différents moments du TP. 
+Nous fournissons différents projets IDEA servant de base de travail aux exercices suivant. Cela permet un point de synchronisation de tous les étudiants à différents moments du TP.
 
-TIP: Fermer chaque projet Eclipse (sans supprimer les sources) avant de passer à l'exercice suivant pour éviter de confondre les projets ex1 et ex2.
+TIP: Fermer chaque projet IDEA (sans supprimer les sources) avant de passer à l'exercice suivant pour éviter de confondre les projets ex1 et ex2.
 
-IMPORTANT: Vous ne pourrez pas faire de `push` avec votre mot de passe (Github n'authorise plus que les access tokens), veuillez utiliser login/<access token> (voir pré-requis plus haut pour le créer).
+IMPORTANT: Vous ne pourrez pas faire de `push` avec votre mot de passe (Github n'autorise plus que les access tokens), veuillez utiliser login/<access token> (voir pré-requis plus haut pour le créer).
 
 NOTE: Pour mettre votre VM en plein écran, modifier la résolution dans la VM (bouton droit sur l'écran -> `Display settings` puis dans le menu VirtualBox, utiliser l'option `View` -> `Full screen mode`. Il peut éventuellement être nécessaire de redemarrer votre VM pour que ce soit pris en compte.
 
 ### Exercice 1 - Etudier une API REST sans couches
 _Temps estimé : 40 mins_
 
-* Importer dans Eclipse les projets `todolist-debut-ex1` et `todolist-debut-ex2`.
+* Importer dans IDEA les projets depuis le VCS (URL : `https://github.com/<x>/tp-miage-2024.git`.
 
-Faire `File` -> `Import` -> `Projects from Git (with smart import)` -> `Clone URI` -> URI: `https://github.com/<x>/tp-miage-2023.git` (conserver les autres options inchangées) -> 'Import projects from File System or Archives' : ne laisser cocher que `tp-miage-2023/tolist-debut-ex1` et `tp-miage-2023/tolist-debut-ex2` ('import as Maven') -> Bouton 'Finish'.
-
-TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'enseignant (`bflorat/tp-miage-2023`), le dépot Github du binôme (`<x>/tp-miage-2023`), le dépot local sur le portable de l'un ou des deux étudiants du binôme.
+TIP: [Rappel Git] Trois dépôts sont ici utilisés : le dépot Github de l'enseignant (`bflorat/tp-miage-2024`), le dépot Github du binôme (`<x>/tp-miage-2024`), le dépot local sur le portable de l'un ou des deux étudiants du binôme.
 
 * Observer le code du projet `todolist-debut-ex1`
 
@@ -77,11 +88,11 @@ docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 ====
 
-NOTE: Pour lancer l'application Spring, selectionner la classe `TodolistApplication` et faire bouton droit -> 'Run as' -> 'Java Application'.
+NOTE: Pour lancer l'application Spring, sélectionner la classe `TodolistApplication` et faire bouton droit -> 'Run as' -> 'Java Application'.
 
 * Quand le nouveau endpoint fonctionne, commiter, faire un push vers Github et fermer le projet Eclipse (ne pas le supprimer).
 
-* Vérifier avec DBeaver que les donnnées sont bien en base PostgreSQL.
+* Vérifier avec DBeaver que les données sont bien en base PostgreSQL.
 
 ### Exercice 2 - Refactoring en architecture hexagonale
 _Temps estimé : 1 h 20_
@@ -113,9 +124,9 @@ _Temps estimé : 20 mins_
 
 * Implémenter (en junit) des TU sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
 
-*Quels types de tests devra-t-on écrire pour les adapteurs ?* 
+*Quels types de tests devra-t-on écrire pour les adaptateurs ?* 
 
-*S'il vous reste du temps, écrire quelques uns de ces types de test.*
+*S'il vous reste du temps, écrire quelques-uns de ces types de test.*
 
 [TIP]
 =====
