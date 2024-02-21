@@ -42,8 +42,6 @@ TIP: Fermer chaque projet IDEA (sans supprimer les sources) avant de passer à l
 
 IMPORTANT: Vous ne pourrez pas faire de `push` avec votre mot de passe (Github n'autorise plus que les access tokens), veuillez utiliser login/<access token> (voir pré-requis plus haut pour le créer).
 
-NOTE: Pour mettre votre VM en plein écran, modifier la résolution dans la VM (bouton droit sur l'écran -> `Display settings` puis dans le menu VirtualBox, utiliser l'option `View` -> `Full screen mode`. Il peut éventuellement être nécessaire de redemarrer votre VM pour que ce soit pris en compte.
-
 ### Exercice 1 - Etudier une API REST sans couches
 _Temps estimé : 40 mins_
 
@@ -122,7 +120,7 @@ _Temps estimé : 20 mins_
 
 * Rester sur le même code que l'exercice 2
 
-* Implémenter (en junit) des TU sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
+* Implémenter (en junit) des TU portant sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
 
 *Quels types de tests devra-t-on écrire pour les adaptateurs ?* 
 
