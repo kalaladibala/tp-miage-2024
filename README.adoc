@@ -19,7 +19,7 @@ Deux options sont possibles :
 
 ### Option 1 [préférée] - Utiliser la VM fournie
 
-Télécharger, décompresser et *tester* cette https://public.florat.net/cours_miage/vm-tp-miage.zip[image VirtualBox] *avant le TP*. Elle contient tous les outils nécessaires (Intellij IDEA, DBeaver, client REST Insomnia, Firefox...).
+Télécharger, décompresser et *tester* cette https://public.florat.net/cours_miage/vm-tp-miage.ova[image VirtualBox] *avant le TP*. Elle contient tous les outils nécessaires (Intellij IDEA, DBeaver, client REST Insomnia, Firefox...).
 
 Le login/mot de passe est : `vagrant`/`vagrant`.
 
