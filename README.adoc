@@ -38,8 +38,6 @@ IMPORTANT: Si pas déjà fait, activer les fonctions de virtualisation CPU dans 
 
 Nous fournissons différents projets IDEA servant de base de travail aux exercices suivant. Cela permet un point de synchronisation de tous les étudiants à différents moments du TP.
 
-TIP: Fermer chaque projet IDEA (sans supprimer les sources) avant de passer à l'exercice suivant pour éviter de confondre les projets ex1 et ex2.
-
 IMPORTANT: Vous ne pourrez pas faire de `push` avec votre mot de passe (Github n'autorise plus que les access tokens), veuillez utiliser login/<access token> (voir pré-requis plus haut pour le créer).
 
 ### Exercice 1 - Etudier une API REST sans couches
@@ -88,7 +86,7 @@ docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 
 NOTE: Pour lancer l'application Spring, sélectionner la classe `TodolistApplication` et faire bouton droit -> 'Run as' -> 'Java Application'.
 
-* Quand le nouveau endpoint fonctionne, commiter, faire un push vers Github et fermer le projet Eclipse (ne pas le supprimer).
+* Quand le nouveau endpoint fonctionne, commiter, faire un push vers Github.
 
 * Vérifier avec DBeaver que les données sont bien en base PostgreSQL.
 
