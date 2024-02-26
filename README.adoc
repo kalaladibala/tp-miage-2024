@@ -1,9 +1,9 @@
 # TP MIAGE conception logicielle
 
-## Nom du(des) étudiant(e)(s) de ce monôme/binôme 
+KALALA DIBALA JOEL ET TIOKARY MOHAMMED
 WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
-#XXX# (et #YYY#)
+KALALA DIBALA JOEL ET TIOKARY MOHAMMED
 
 Commentaires éventuels des étudiants : #XXXXXX#
 
