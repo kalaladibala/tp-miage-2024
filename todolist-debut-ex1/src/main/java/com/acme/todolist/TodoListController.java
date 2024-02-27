@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.inject.Inject;
+
 /**
  * Le controlleur Spring MVC qui expose les endpoints REST
  * 
@@ -24,6 +26,7 @@ public class TodoListController {
 	private static final String LATE = "[LATE!]";
 	private TodoItemRepository todoItemRepository;
 
+	@Inject
 	public TodoListController(TodoItemRepository todoItemRepository) {
 		super();
 		this.todoItemRepository = todoItemRepository;
@@ -36,8 +39,8 @@ public class TodoListController {
 	@PostMapping("/todos")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public void createTodoItem(@RequestBody TodoItem todoItem) {
-		// Code à compléter
-		// ...
+		// voici la réponse
+		todoItemRepository.save(todoItem);
 	}
 
 	@GetMapping("/todos")
