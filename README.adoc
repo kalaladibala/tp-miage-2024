@@ -139,7 +139,33 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
   - la couche `application` qui contient tous les contrats : ports (interfaces) et les implémentations des ports d'entrée (ou "use case") et qui servent à orchestrer les entités.
   - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)
 
-*Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
+*Rappeler en quelques lignes les grands principes de l'architecture hexagonale.
+
+
+L'architecture hexagonale, est un modèle de conception logicielle qui vise à créer une séparation claire entre la logique métier d'une application et les interfaces par lesquelles cette application interagit avec des systèmes externes, tels que des bases de données, des services web ou l'interface utilisateur. Voici ses principaux principes :
+
+Centralité de la logique métier : Au cœur de l'architecture se trouve la logique métier, souvent représentée par des entités et des cas d'utilisation. Ces éléments ne dépendent d'aucun cadre extérieur ou technologie spécifique.
+
+Ports : Les ports sont des interfaces qui définissent les points d'interaction nécessaires entre la logique métier et les agents externes. Il y a généralement des ports d'entrée pour les commandes entrantes (comme les requêtes HTTP) et des ports de sortie pour les interactions sortantes (comme la persistance des données).
+
+
+Adaptateurs : Les adaptateurs sont des implémentations concrètes des ports qui adaptent la communication entre la logique métier et les agents externes. 
+
+Par exemple, un adaptateur web peut convertir des requêtes HTTP en appels de méthode sur les ports d'entrée, tandis qu'un adaptateur de persistance peut implémenter la logique nécessaire pour enregistrer des entités dans une base de données.
+
+Séparation des préoccupations : L'architecture hexagonale cherche à séparer les préoccupations en isolant la logique métier des détails techniques de l'infrastructure. 
+
+Cela permet à la logique métier d'être indépendante et facile à tester, tandis que les adaptateurs peuvent être modifiés ou remplacés sans affecter le cœur de l'application.
+
+Flexibilité et évolutivité : Grâce à cette séparation, l'application devient plus flexible et évolutive. 
+On peut facilement changer la technologie de la base de données ou les moyens de communication avec les systèmes externes sans impacter la logique métier.
+
+Facilité de test : L'architecture hexagonale facilite les tests automatisés, car la logique métier peut être testée sans nécessiter les infrastructures externes. 
+Les tests peuvent se concentrer sur les comportements métier en utilisant des adaptateurs de test ou des mock objects.
+
+
+Déploiement indépendant : Les différentes parties de l'application peuvent être déployées indépendamment, ce qui est utile dans les environnements de microservices ou de cloud computing où différents composants peuvent être mis à jour séparément.
+
 
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
