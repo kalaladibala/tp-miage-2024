@@ -2,23 +2,41 @@ package com.acme.todolist;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
+import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
 
 import com.acme.todolist.adapters.persistence.TodoItemJpaEntity;
 import com.acme.todolist.adapters.persistence.TodoItemRepository;
 import com.acme.todolist.adapters.persistence.TodoItemPersistenceAdapter;
 import com.acme.todolist.domain.TodoItem;
+import com.acme.todolist.adapters.rest_api.TodoListController;
+import com.acme.todolist.application.port.in.AddTodoItem;
+import com.acme.todolist.application.port.in.GetTodoItems;
+import org.springframework.test.web.servlet.RequestBuilder;
 
-@SpringBootTest
+@WebMvcTest(controllers = TodoListController.class)
 class ApplicationTests {
+
+	@Autowired
+	private MockMvc mockMvc;
+
+	@MockBean
+	private AddTodoItem addTodoItem;
+
+	@MockBean
+	private GetTodoItems getTodoItems;
 
 	@Autowired
 	private TodoItemPersistenceAdapter persistenceAdapter;
@@ -83,4 +101,26 @@ class ApplicationTests {
 		assertEquals("Task 1", items.get(0).getContent());
 		assertEquals("Task 2", items.get(1).getContent());
 	}
+
+	@Test
+	void testAddTodoItem() throws Exception {
+		// Préparer les données du test
+		TodoItem todoItem = new TodoItem("1", Instant.now(), "Test Task");
+		String jsonTodoItem = "{\"id\":\"1\",\"time\":\"2024-03-16T12:00:00Z\",\"content\":\"Test Task\"}";
+
+		// Simuler le comportement du port d'entrée AddTodoItem
+		doNothing().when(addTodoItem).addTodoItem(any(TodoItem.class));
+
+		// Effectuer la requête POST
+		mockMvc.perform((RequestBuilder) post("/todos")
+						.contentType(MediaType.valueOf("application/json"))
+						.contentType(MediaType.valueOf(jsonTodoItem)))
+				// Vérifier que la réponse est un code 201 (Created)
+				.andExpect(status().isCreated());
+
+		// Vérifier que la méthode addTodoItem du port d'entrée AddTodoItem a été appelée avec le bon paramètre
+		verify(addTodoItem, times(1)).addTodoItem(todoItem);
+	}
+
+	// Vous pouvez ajouter d'autres tests pour tester d'autres endpoints et scénarios
 }
