@@ -3,7 +3,7 @@
 ## Nom du(des) étudiant(e)(s) de ce monôme/binôme 
 WARNING: NE PAS OUBLIER DE MENTIONNER LES DEUX NOMS SI VOUS ETES EN BINOME!
 
-KALALA DIBALA JOEL ET TIOKARY MOHAMED
+KALALA DIBALA JOEL ,TIOKARY MOHAMED ET ACHRAF CHELLAOUI
 
 Commentaires éventuels des étudiants : #XXXXXX#
 
@@ -182,6 +182,11 @@ _Temps estimé : 20 mins_
 * Implémenter (en junit) des TU portant sur la règle de gestion qui consiste à afficher `[LATE!]` dans la description d'un item en retard de plus de 24h.
 
 *Quels types de tests devra-t-on écrire pour les adaptateurs ?* 
+
+
+Tests d'intégration : Ces tests vérifient l'interaction entre l' application et l'adaptateur. Par exemple, pour un adaptateur de persistance,on peut tester les opérations CRUD (Create, Read, Update, Delete) pour vous assurer qu'elles fonctionnent correctement avec la base de données réelle. Pour un adaptateur REST, on peut tester les points de terminaison pour vous assurer qu'ils renvoient les réponses attendues.
+
+Tests de mocks : On  peut utiliser des bibliothèques de mocks comme Mockito pour simuler le comportement des dépendances externes de l' adaptateur, comme une base de données ou un service externe. Ces tests  permettent de contrôler le comportement de ces dépendances afin de tester spécifiquement le comportement de l' adaptateur.
 
 *S'il vous reste du temps, écrire quelques-uns de ces types de test.*
 
